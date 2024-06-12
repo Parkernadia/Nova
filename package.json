@@ -1,0 +1,33 @@
+{
+    "name": "resolveit",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm start",
+        "dev": "nodemon src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Parkernadia/ResolveIt.git"
+    },
+    "author": "Nadia Parker",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Parkernadia/ResolveIt/issues"
+    },
+    "homepage": "https://github.com/Parkernadia/ResolveIt#readme",
+    "description": "",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "joi": "^17.13.1",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.4.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.3"
+    }
+}
