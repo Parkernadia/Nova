@@ -1,3 +1,4 @@
+// presence: "required" ensures that empty objects do not pass validation tests
 function validateResource(schema) {
     return async function (req, res, next) {
         const { error, value } = schema.validate(req.body, {
@@ -5,7 +6,7 @@ function validateResource(schema) {
         });
 
         if (error) {
-            return res.status(422).json({ error: error.details[0].message });
+            return res.status(422).json({ message: error.details[0].message });
         }
 
         next();
@@ -22,7 +23,7 @@ function validateWithParams(schema) {
         );
 
         if (error) {
-            return res.status(422).json({ error: error.details[0].message });
+            return res.status(422).json({ message: error.details[0].message });
         }
 
         next();
@@ -36,7 +37,7 @@ function validateWithQuery(schema) {
         });
 
         if (error) {
-            return res.status(422).json({ error: error.details[0].message });
+            return res.status(422).json({ message: error.details[0].message });
         }
 
         next();

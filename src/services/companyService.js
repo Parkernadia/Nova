@@ -1,7 +1,8 @@
 const Company = require("../models/companyModel");
 
-exports.addOneCompany = async function (data) {
-    return await Company.create({ ...data, status: "pending" });
+exports.addOneCompany = async function (data, session = {}) {
+    const company = new Company({ ...data, status: "pending" });
+    return await company.save(session);
 };
 
 exports.getOneCompanyByEmail = async function (email) {

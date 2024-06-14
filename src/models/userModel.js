@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema(
         password: {
             type: String,
             required: true,
+            select: false,
         },
         role: {
             type: String,
@@ -27,13 +28,17 @@ const userSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        active: {
+            type: Boolean,
+            default: true,
+        },
         companyId: {
             type: mongoose.Types.ObjectId,
             ref: "Company",
-            required: true,
         },
     },
     { timestamps: true }
 );
 
+userSchema.index({ email: 1 });
 module.exports = User = mongoose.model("User", userSchema);

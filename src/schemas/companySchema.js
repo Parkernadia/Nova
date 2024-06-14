@@ -7,7 +7,7 @@ exports.createCompanySchema = joi.object({
     size: joi.string().required(),
 });
 
-exports.createCompanyAdminSchema = joi.object({
+exports.createCompanyWithAdminSchema = joi.object({
     name: joi.string().required(),
     email: joi.string().email().required(),
     industry: joi.string().required(),

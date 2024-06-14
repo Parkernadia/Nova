@@ -8,7 +8,7 @@ const companyController = require("../controllers/companyController");
 const {
     createCompanySchema,
     updateCompanySchema,
-    createCompanyAdminSchema,
+    createCompanyWithAdminSchema,
 } = require("../schemas/companySchema");
 
 const router = express.Router();
@@ -16,8 +16,8 @@ const router = express.Router();
 router
     .route("/companies")
     .post(
-        validateResource(createCompanyAdminSchema),
-        companyController.addOneCompanyAdmin
+        validateResource(createCompanyWithAdminSchema),
+        companyController.addOneCompanyWithAdmin
     )
     .get(companyController.getAllCompanies);
 
